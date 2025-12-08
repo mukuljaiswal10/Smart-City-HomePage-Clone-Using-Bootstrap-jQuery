@@ -1,0 +1,230 @@
+*
+{
+    font-family: "Mulish", sans-serif;
+}
+.navbar-toggler-icon>i 
+{
+    font-size:30px;
+    color:#004282;
+}
+.header-btn>:nth-child(1)
+{
+    background-image: linear-gradient(to right, #4a9c46, #3db138, #40d954, #5cc044, #4b9f45);
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    line-height: 22px;
+    font-weight: bold;
+}
+.header-btn>:nth-child(2)
+{
+    color: #f3842f;
+    border:2px solid #f3842f;
+    padding: 7px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    line-height: 22px;
+    font-weight: bold;
+    background-color: transparent;
+}
+#navbarNav>ul>li>a 
+{
+    font-weight: 800;
+    color: #004282;
+    font-size: 14px;
+}
+.nav-link
+{
+    color: #004282;
+    font-weight: 800;
+    font-size:17px;
+}
+#mobile-bottom-sticky
+{
+    width: 100%;
+    position:fixed;
+    bottom: 0px;
+    left: 0px;
+    display: none;
+    z-index: 999999;
+}
+.mobile-bottom-menu
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.mobile-sticky-btn
+{
+    flex-basis: 33.333%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 10px;
+    background-color: #3db138;
+    border-right: 1px solid white;
+    padding: 15px 0px;
+    color: white;
+    animation: buttonColorChange 3s linear 3s infinite;
+}
+@keyframes buttonColorChange 
+{
+    0%
+    {
+        background-color:black;
+    }
+    25%
+    {
+        background-color: blue;
+    }
+    50%
+    {
+        background-color:brown;
+    }
+    75%
+    {
+        background-color: #f3842f;
+    }
+    100%
+    {
+        background-color: black;
+    }
+}
+.mobile-sticky-btn>h4 
+{
+    font-size: 14px;
+    font-weight:bold;
+    padding: 0px;
+    margin: 0px;
+}
+#banner-slider .carousel-indicators [data-bs-target]
+{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+#banner-slider .carousel-control-prev-icon ,#banner-slider .carousel-control-prev,#banner-slider .carousel-control-next,#banner-slider .carousel-control-next-icon
+{
+    display: none;
+}
+#social-icon-sticky
+{
+    position: fixed;
+    right: 10px;
+    top: 60%;
+    transform: translate(0%,-50%);
+    z-index: 999;
+}
+.social-icon-item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+}
+.social-icon-item
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.social-icon-item>span
+{
+    background-color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: 0.5s;
+    padding: 7px 10px;
+    visibility: hidden;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: inline-block;
+    position:absolute;
+    right: 40px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    border:0.5px solid grey;
+}
+.social-icon-item a img
+{
+    transition:1s;
+}
+.social-icon-item a:hover img
+{
+    transform: rotate(360deg);
+}
+.social-icon-item:hover > span 
+{
+    transform: scaleX(1);
+    visibility: visible;
+}
+.form-section 
+{
+    background-color: #306598;
+}
+.inp>input
+{
+    border-radius: 0px;
+}
+.inp>button
+{
+    border-radius: 0px;
+    background-image: linear-gradient(to right, #4a9c46, #3db138, #40d954, #5cc044, #4b9f45);
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+.inp>button:hover 
+{
+    color: white;
+}
+#slider 
+{
+    background-color: #F3F3F3;
+}
+.same-head 
+{
+    color: #004282;
+    font-weight: bold;
+}
+.same-para 
+{
+    font-weight:600;
+}
+#slider .owl-theme .owl-nav
+{
+    display: none;
+}
+.project-overview 
+{
+    list-style-type:none;
+    padding: 0px;
+    margin: 0px;
+}
+.project-overview>li
+{
+    margin-bottom: 20px;
+}
+.project-overview>li>i 
+{
+    color: #337AB7;
+}
+.btn-overview 
+{
+    border: none;
+    background-image: linear-gradient(to right, #4a9c46, #3db138, #40d954, #5cc044, #4b9f45);
+    padding: 5px 30px;
+    color: white;
+}
+.btn-overview:hover
+{
+    color: white;
+}
