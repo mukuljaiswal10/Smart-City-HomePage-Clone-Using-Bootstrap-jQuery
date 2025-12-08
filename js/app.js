@@ -1,72 +1,46 @@
-/* Repeat counters on every scroll - robust version */
+// counter number logic
 
-// pick all counters
-const counters = document.querySelectorAll(".count");
-const duration = 1200; // ms animation time
-const active = new Map(); // to store active raf ids per element
+// Step 1: Select all count elements
+let counters = document.querySelectorAll(".count");
 
-function animateCounter(el, target, duration) {
-  // cancel previous animation if exists
-  if (active.has(el)) {
-    cancelAnimationFrame(active.get(el).rafId);
-    active.delete(el);
-  }
+// Step 2: Function to run the counter
+function runCounter(counter) {
+    let target = +counter.getAttribute("data-target"); // target value
+    let count = 0;
 
-  let startTime = null;
-  target = +target;
-  el.textContent = "0";
+    let speed = target / 100; // speed calculation simple
 
-  function tick(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const elapsed = timestamp - startTime;
-    const progress = Math.min(elapsed / duration, 1);
+    let update = setInterval(() => {
+        count += speed;          // increase count
+        counter.innerText = Math.floor(count);
 
-    // easeOutCubic
-    const ease = 1 - Math.pow(1 - progress, 3);
-    const value = Math.floor(ease * target);
-
-    el.textContent = value;
-
-    if (progress < 1) {
-      const rafId = requestAnimationFrame(tick);
-      active.set(el, { rafId });
-    } else {
-      el.textContent = target; // ensure exact final value
-      active.delete(el);
-    }
-  }
-
-  const rafId = requestAnimationFrame(tick);
-  active.set(el, { rafId });
+        if (count >= target) {   // stop at target
+            counter.innerText = target;
+            clearInterval(update);
+        }
+    }, 20); // update every 20ms
 }
 
-// Observer watches the parent row/container
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // start/reset all counters when visible
-      counters.forEach(counter => {
-        const target = counter.getAttribute("data-target") || "0";
-        animateCounter(counter, target, duration);
-      });
-      // DO NOT disconnect if you want repeat on every scroll
+// Step 3: Check when cards come into view
+let section = document.querySelector(".row.my-5"); // your container
+let started = false;
+
+window.addEventListener("scroll", () => {
+    let sectionTop = section.getBoundingClientRect().top;
+
+    if (sectionTop < window.innerHeight && !started) {
+        counters.forEach(counter => runCounter(counter));
+        started = true; // so it runs only once
     }
-  });
-}, { threshold: 0.4 });
+});
+// end
 
-// Change selector to your actual container if needed
-const container = document.querySelector(".row.my-5");
-if (container) observer.observe(container);
-else console.warn("Observer error: container .row.my-5 not found.");
-
-
-
-
+  // scroll to top logic :- 
   const btn = document.getElementById("topBtn");
 
   window.addEventListener("scroll", () => {
     // 200px se zyada scroll kare to button show hoga
-    if (window.scrollY >150) {
+    if (window.scrollY > 150) {
       btn.classList.add("show");
     } else {
       btn.classList.remove("show");
