@@ -361,3 +361,23 @@
     background-color: #CE9600;
     border: none;
 }
+#schedule 
+{
+    background-color: #F3F3F3;
+}
+.schedule-row 
+{
+    border: 5px solid #0886C7;
+}
+#footer 
+{
+    background-color: #306598;
+}
+.iti 
+{
+    width: 100% !important;
+}
+.iti input
+{
+    width: 100% !important;
+}

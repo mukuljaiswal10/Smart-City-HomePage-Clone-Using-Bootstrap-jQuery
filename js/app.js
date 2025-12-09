@@ -35,19 +35,6 @@ window.addEventListener("scroll", () => {
 });
 // end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // scroll to top logic :- 
 const btn = document.getElementById("topBtn");
 
@@ -67,3 +54,13 @@ btn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+// end
+
+// country-code-js-custom
+var input = document.querySelector("#phone");
+window.intlTelInput(input, {
+  initialCountry: "in",      // default India (+91)
+  separateDialCode: true,    // country code alag box me
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+});
+// end
