@@ -234,6 +234,7 @@
     background-color: #F8F8F8;
 }
 
+/* scroll-to-top logic */
 .top-btn {
   position: fixed;
   right: 20px;
@@ -281,4 +282,82 @@
 /* Hover effect (optional) */
 .top-btn:hover {
   transform: scale(1.12);
+}
+/* end */
+
+.table-header 
+{
+    background-color: #306598;
+    color: white;
+    padding: 10px 5px;
+}
+.table-header>h4
+{
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.table-header>p 
+{
+    padding: 0px;
+    margin: 0px;
+}
+.table-head
+{
+    background-color: #306598;
+    color: white;
+}
+.plot-size 
+{
+    background-color:#EAEAEA !important;
+    font-weight: bold;
+    border: 1px solid rgb(208, 208, 208);
+}
+.plot 
+{
+    border-right: 1px solid rgb(208, 208, 208) !important;
+}
+.plot-price 
+{
+    border: 1px solid rgb(208, 208, 208);
+}
+.plot-price>button 
+{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 7px;
+}
+.plot-price>button>i 
+{
+    color:#FFC83D;
+}
+.plot-price>button:hover 
+{
+    background-color: #CE9600;
+    color: black;
+}
+.plot-price>button:hover i 
+{
+    color: yellow;
+}
+.para 
+{
+    font-size: 14px;
+}
+.book-visit-btn 
+{
+    border: none ;
+    border-radius: 20px;
+    font-weight: bolder;
+    background-color: #f6b606;
+    font-size: 30px;
+}
+.book-visit-btn:hover 
+{
+    background-color: #CE9600;
+    border: none;
 }
